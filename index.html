@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>ContainerHub – Orders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>ContainerHub – Order Management</h1>
+
+<section id="login-section">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="login-error"></p>
+</section>
+
+<section id="orders-section" class="hidden">
+    <h2>Create Order</h2>
+
+    <input type="text" id="clientName" placeholder="Client Name">
+    <select id="containerType">
+        <option value="">Select container type</option>
+        <option value="20ft">20 ft</option>
+        <option value="40ft">40 ft</option>
+    </select>
+    <input type="number" id="quantity" placeholder="Quantity">
+    <button onclick="addOrder()">Add Order</button>
+
+    <h2>Orders List</h2>
+    <input type="text" id="search" placeholder="Search by client" onkeyup="filterOrders()">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Client</th>
+                <th>Type</th>
+                <th>Qty</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="ordersTable"></tbody>
+    </table>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
